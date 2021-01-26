@@ -13,11 +13,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with TickerProviderStateMixin {
-  final countries = getCountries().map((e) => countryItem(e)).toList();
   var _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    final countries =
+        getCountries().map((e) => countryItem(e, context)).toList();
     return Container(
       constraints: BoxConstraints.expand(),
       decoration: bgImage('assets/images/home.png'),

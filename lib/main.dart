@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_play/screens/country.dart';
 import 'package:flutter_play/screens/navigation.dart';
 import 'package:flutter_play/screens/splash.dart';
 
@@ -19,7 +20,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.white),
       initialRoute: '/',
-      routes: {'/': (context) => Splash(), '/home': (context) => Navigation()},
+      routes: {
+        '/': (context) => Splash(),
+        '/home': (context) => Navigation(),
+        '/country': (context) => CountryInfo()
+      },
     );
   }
 }
