@@ -8,7 +8,8 @@ TextStyle h2(Color _color) {
       color: _color,
       fontSize: 40,
       fontWeight: FontWeight.w700,
-      fontFamily: 'Roboto');
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none);
 }
 
 TextStyle h3(Color _color) {
@@ -16,7 +17,8 @@ TextStyle h3(Color _color) {
       color: _color,
       fontSize: 30,
       fontWeight: FontWeight.w700,
-      fontFamily: 'Roboto');
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none);
 }
 
 TextStyle h4(Color _color) {
@@ -24,7 +26,8 @@ TextStyle h4(Color _color) {
       color: _color,
       fontSize: 20,
       fontWeight: FontWeight.w700,
-      fontFamily: 'Roboto');
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none);
 }
 
 TextStyle normal(Color _color) {
@@ -32,7 +35,8 @@ TextStyle normal(Color _color) {
       color: _color,
       fontSize: 25,
       fontWeight: FontWeight.w100,
-      fontFamily: 'Roboto');
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none);
 }
 
 TextStyle caption(Color _color) {
@@ -40,7 +44,8 @@ TextStyle caption(Color _color) {
       color: _color,
       fontSize: 20,
       fontWeight: FontWeight.w100,
-      fontFamily: 'Roboto');
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none);
 }
 
 TextStyle buttonText(Color _color) {
