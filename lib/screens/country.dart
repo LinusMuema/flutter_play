@@ -53,7 +53,7 @@ class _CountryInfoState extends State<CountryInfo> with RouteAware {
                       margin: EdgeInsets.only(left: 20, bottom: 20),
                     ),
                     AnimatedContainer(
-                      duration: Duration(seconds: 1),
+                      duration: Duration(milliseconds: 300),
                       height: _detailsHeight,
                     ),
                     GestureDetector(
