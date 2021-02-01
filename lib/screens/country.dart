@@ -1,7 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_play/components/texts.dart';
+import 'package:flutter_play/components/background.dart';
+import 'package:flutter_play/components/country_details.dart';
+import 'package:flutter_play/components/headings.dart';
 import 'package:flutter_play/data/countries.dart';
 import 'package:flutter_play/utils/commons.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,9 +11,10 @@ class CountryInfo extends StatefulWidget {
   _CountryInfoState createState() => _CountryInfoState();
 }
 
-class _CountryInfoState extends State<CountryInfo> with RouteAware {
-  var _detailsHeight = 5.0;
+class _CountryInfoState extends State<CountryInfo>
+    with TickerProviderStateMixin {
   var _detailsState = false;
+  var _opacity = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +27,9 @@ class _CountryInfoState extends State<CountryInfo> with RouteAware {
         child: Container(
           constraints: BoxConstraints.expand(),
           decoration: bgImage(_country.image),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(
-                sigmaX: _detailsState ? 5.0 : 0.0,
-                sigmaY: _detailsState ? 5.0 : 0.0),
-            child: SafeArea(
-              child: Container(
+          child: BlurBackground(
+              detailsState: _detailsState,
+              content: Container(
                 constraints: BoxConstraints.expand(),
                 decoration: verticalGradientRounded(),
                 child: Column(
@@ -44,17 +42,21 @@ class _CountryInfoState extends State<CountryInfo> with RouteAware {
                         child: SvgPicture.asset('assets/images/back.svg'),
                       ),
                     ),
-                    Spacer(),
-                    Container(
-                        child: Text(_country.name, style: h2(Colors.white)),
-                        margin: EdgeInsets.only(left: 20, bottom: 5)),
-                    Container(
-                      child: Text(places, style: normal(Colors.white)),
-                      margin: EdgeInsets.only(left: 20, bottom: 20),
+                    Heading(
+                      heading: _country.name,
+                      cap: places,
+                      color: Colors.white,
+                      large: false,
                     ),
-                    AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
-                      height: _detailsHeight,
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                      child: AnimatedOpacity(
+                        opacity: _opacity,
+                        duration: Duration(milliseconds: 5000),
+                        child: _detailsState
+                            ? CountryDetails(_country)
+                            : Container(),
+                      ),
                     ),
                     GestureDetector(
                       onTap: () => showDetails(),
@@ -68,9 +70,7 @@ class _CountryInfoState extends State<CountryInfo> with RouteAware {
                     ),
                   ],
                 ),
-              ),
-            ),
-          ),
+              )),
         ),
       ),
     );
@@ -79,7 +79,7 @@ class _CountryInfoState extends State<CountryInfo> with RouteAware {
   showDetails() {
     setState(() {
       _detailsState = !_detailsState;
-      _detailsHeight = _detailsState ? 100 : 0;
+      _opacity = _detailsState ? 1.0 : 0.0;
     });
   }
 }

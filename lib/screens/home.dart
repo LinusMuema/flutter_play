@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_play/components/colors.dart';
 import 'package:flutter_play/components/country.dart';
+import 'package:flutter_play/components/headings.dart';
 import 'package:flutter_play/components/texts.dart';
 import 'package:flutter_play/data/countries.dart';
 import 'package:flutter_play/utils/commons.dart';
@@ -25,12 +26,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-              child: Text(heading, style: h2(Colors.white)),
-              margin: EdgeInsets.only(left: 25, top: 65, bottom: 2)),
-          Container(
-            child: Text(subheading, style: normal(Colors.white)),
-            margin: EdgeInsets.only(left: 25, top: 2, bottom: 45),
+          Heading(
+            heading: heading,
+            cap: subheading,
+            color: Colors.white,
+            large: true,
           ),
           Expanded(
             child: CarouselSlider(

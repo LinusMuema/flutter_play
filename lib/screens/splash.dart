@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_play/components/buttons.dart';
 import 'package:flutter_play/components/dialogs.dart';
+import 'package:flutter_play/components/headings.dart';
 import 'package:flutter_play/components/texts.dart';
 import 'package:flutter_play/utils/commons.dart';
 
@@ -12,15 +13,16 @@ class Splash extends StatelessWidget {
     return Scaffold(
       body: Container(
         constraints: BoxConstraints.expand(),
-        padding: EdgeInsets.symmetric(horizontal: 25),
         decoration: bgImage('assets/images/splash.png'),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-                child: Text(heading, style: h2(Colors.black)),
-                padding: EdgeInsets.only(top: 65, bottom: 2)),
-            Text(subheading, style: normal(Colors.black)),
+            Heading(
+              heading: heading,
+              cap: subheading,
+              color: Colors.black,
+              large: true,
+            ),
             Spacer(),
             Container(
               margin: EdgeInsets.symmetric(vertical: 30),
