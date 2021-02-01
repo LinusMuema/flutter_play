@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_play/components/colors.dart';
 import 'package:flutter_play/components/texts.dart';
 import 'package:flutter_play/data/countries.dart';
+import 'package:flutter_play/utils/commons.dart';
 
 class CountryDetails extends StatefulWidget {
   final Country _country;
@@ -15,6 +16,8 @@ class _CountryDetailsState extends State<CountryDetails> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: deviceWidth(context),
+      margin: EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: [
           Text(
