@@ -21,7 +21,9 @@ class _CountryInfoState extends State<CountryInfo> {
   Widget build(BuildContext context) {
     final Country _country = ModalRoute.of(context).settings.arguments;
     final details = CountryDetails(_country);
-    final places = "${_country.places} places to visit";
+    final places = _detailsState
+        ? _country.continent
+        : "${_country.places} places to visit";
 
     return Scaffold(
       body: Hero(
