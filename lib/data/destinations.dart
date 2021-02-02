@@ -100,6 +100,5 @@ final destinations = [
   lochNess
 ];
 List<Destination> getDestinations(String country) {
-  print(country);
   return destinations.where((value) => value.country == country).toList();
 }

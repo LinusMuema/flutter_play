@@ -4,7 +4,6 @@ import 'package:flutter_play/data/destinations.dart';
 import 'package:flutter_play/utils/commons.dart';
 
 Widget destinationItem(Destination destination) {
-  print(destination.image);
   return Container(
     constraints: BoxConstraints.expand(),
     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),

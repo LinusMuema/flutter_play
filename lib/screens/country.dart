@@ -4,6 +4,7 @@ import 'package:flutter_play/components/containers.dart';
 import 'package:flutter_play/components/country_details.dart';
 import 'package:flutter_play/components/headings.dart';
 import 'package:flutter_play/data/countries.dart';
+import 'package:flutter_play/data/destinations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:measurer/measurer.dart';
 
@@ -20,10 +21,11 @@ class _CountryInfoState extends State<CountryInfo> {
   @override
   Widget build(BuildContext context) {
     final Country _country = ModalRoute.of(context).settings.arguments;
+    final count = getDestinations(_country.name).length;
     final details = CountryDetails(_country);
     final topPadding = MediaQuery.of(context).padding.top + 5;
     final location = _country.continent;
-    final places = "${_country.places} places to visit";
+    final places = "$count places to visit";
     final caption = _detailsState ? location : places;
 
     return Scaffold(

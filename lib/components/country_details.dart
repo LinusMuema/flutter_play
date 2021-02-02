@@ -20,61 +20,66 @@ class _CountryDetailsState extends State<CountryDetails> {
   @override
   Widget build(BuildContext context) {
     final destinations = getDestinations(widget._country.name);
-    final destinationItems =
+    final List<Widget> destinationItems =
         destinations.map((e) => destinationItem(e)).toList();
+    final destinationHeight = MediaQuery.of(context).size.height * 0.25;
 
     return Container(
       width: deviceWidth(context),
-      margin: EdgeInsets.only(left: 25, top: 10),
+      margin: EdgeInsets.symmetric(vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.only(right: 30),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
             child: Text(widget._country.description, style: h4(Colors.white)),
           ),
-          Row(
-            children: [
-              Flexible(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 15),
-                        child: Divider(height: 1, color: grey300),
+          Container(
+            margin: EdgeInsets.only(left: 25, top: 10, bottom: 10),
+            child: Row(
+              children: [
+                Flexible(
+                    flex: 2,
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 15),
+                          child: Divider(height: 1, color: grey300),
+                        ),
+                        Likes(users: widget._country.likes)
+                      ],
+                    )),
+                Flexible(
+                    flex: 1,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 25),
+                        decoration: darkBackground(),
+                        padding: EdgeInsets.all(10),
+                        child: Icon(
+                          Icons.favorite_border,
+                          color: Colors.white,
+                        ),
                       ),
-                      Likes(users: widget._country.likes)
-                    ],
-                  )),
-              Flexible(
-                  flex: 1,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      margin: EdgeInsets.only(top: 25),
-                      decoration: darkBackground(),
-                      padding: EdgeInsets.all(10),
-                      child: Icon(
-                        Icons.favorite_border,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ))
-            ],
+                    ))
+              ],
+            ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 20),
+            margin: EdgeInsets.symmetric(vertical: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Places to visit', style: h5(Colors.white)),
+                Container(
+                    margin: EdgeInsets.only(left: 25, bottom: 10),
+                    child: Text('Places to visit', style: h5(Colors.white))),
                 Container(
                   child: CarouselSlider(
                     items: destinationItems,
                     options: CarouselOptions(
                       height: MediaQuery.of(context).size.height * 0.25,
-                      viewportFraction: 0.7,
-                      autoPlay: true,
+                      viewportFraction: 0.75,
                       onPageChanged: (index, _) {
                         setState(() {});
                       },

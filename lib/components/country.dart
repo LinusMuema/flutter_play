@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_play/data/countries.dart';
+import 'package:flutter_play/data/destinations.dart';
 import 'package:flutter_play/utils/commons.dart';
 
 import 'headings.dart';
 
 Widget countryItem(Country country, BuildContext context) {
-  final places = "${country.places} places to visit";
+  final count = getDestinations(country.name).length;
+  final places = "$count places to visit";
   final heading = country.name;
   return InkWell(
     onTap: () {
