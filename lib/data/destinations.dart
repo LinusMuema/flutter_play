@@ -69,8 +69,8 @@ final tePuia = Destination(
 
 // Deutschland
 final neuschwanstein = Destination(
-  name: "Neushwanstein",
-  image: 'assets/images/neushwanstein.png',
+  name: "Neuschwanstein",
+  image: 'assets/images/neuschwanstein.png',
   country: 'Germany',
 );
 
@@ -85,3 +85,21 @@ final dresden = Destination(
   image: 'assets/images/dresden.png',
   country: 'Germany',
 );
+final destinations = [
+  neuschwanstein,
+  kehlsteinhaus,
+  dresden,
+  arthursPass,
+  lakeWakatipu,
+  tePuia,
+  laSagradaFamilia,
+  alhambra,
+  museoDelPrado,
+  edinburgh,
+  glasgow,
+  lochNess
+];
+List<Destination> getDestinations(String country) {
+  print(country);
+  return destinations.where((value) => value.country == country).toList();
+}

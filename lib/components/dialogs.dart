@@ -37,7 +37,7 @@ class SplashDialog extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                    child: Text(type, style: h4(grey500)),
+                    child: Text(type, style: buttonText(grey500)),
                     margin: EdgeInsets.symmetric(vertical: 20)),
                 addInputs(),
                 InkWell(

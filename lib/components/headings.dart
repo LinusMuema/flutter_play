@@ -19,7 +19,7 @@ class Heading extends StatelessWidget {
           margin: EdgeInsets.only(left: 25, top: 65, bottom: 2),
         ),
         Container(
-          child: Text(cap, style: large ? normal(color) : caption(color)),
+          child: Text(cap, style: h5(Colors.white)),
           margin: EdgeInsets.only(left: 25, top: 2, bottom: 10),
         ),
       ],

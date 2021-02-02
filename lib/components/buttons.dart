@@ -55,7 +55,7 @@ class SocialAuthButton extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Text("Continue with Facebook", style: h4(Colors.white)),
+        child: Text("Continue with Facebook", style: buttonText(Colors.white)),
       ),
     );
   }
@@ -75,7 +75,7 @@ class SplashAuthButton extends StatelessWidget {
       child: Center(
         child: Text(
           _text.contains("Sign") ? "Create account" : _text,
-          style: h4(Colors.white),
+          style: buttonText(Colors.white),
         ),
       ),
     );

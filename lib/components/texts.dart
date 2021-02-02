@@ -24,8 +24,8 @@ TextStyle h3(Color _color) {
 TextStyle h4(Color _color) {
   return TextStyle(
       color: _color,
-      fontSize: 20,
-      fontWeight: FontWeight.w700,
+      fontSize: 17,
+      fontWeight: FontWeight.w400,
       fontFamily: 'Roboto',
       decoration: TextDecoration.none);
 }
@@ -33,8 +33,8 @@ TextStyle h4(Color _color) {
 TextStyle h5(Color _color) {
   return TextStyle(
       color: _color,
-      fontSize: 17,
-      fontWeight: FontWeight.w400,
+      fontSize: 20,
+      fontWeight: FontWeight.w100,
       fontFamily: 'Roboto',
       decoration: TextDecoration.none);
 }
