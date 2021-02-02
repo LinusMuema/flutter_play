@@ -3,6 +3,7 @@ import 'package:flutter_play/components/background.dart';
 import 'package:flutter_play/components/containers.dart';
 import 'package:flutter_play/components/country_details.dart';
 import 'package:flutter_play/components/headings.dart';
+import 'package:flutter_play/components/rotate.dart';
 import 'package:flutter_play/data/countries.dart';
 import 'package:flutter_play/data/destinations.dart';
 import 'package:flutter_svg/svg.dart';
@@ -76,13 +77,16 @@ class _CountryInfoState extends State<CountryInfo> {
                         ),
                       ]),
                     ),
-                    GestureDetector(
-                      onTap: () => showDetails(),
-                      child: Container(
-                        height: 24,
-                        margin: EdgeInsets.symmetric(vertical: 20),
-                        child: Center(
-                          child: SvgPicture.asset('assets/images/more.svg'),
+                    Rotate(
+                      animate: _detailsState,
+                      content: GestureDetector(
+                        onTap: () => showDetails(),
+                        child: Container(
+                          height: 24,
+                          margin: EdgeInsets.symmetric(vertical: 20),
+                          child: Center(
+                            child: SvgPicture.asset('assets/images/more.svg'),
+                          ),
                         ),
                       ),
                     ),
