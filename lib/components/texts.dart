@@ -30,6 +30,15 @@ TextStyle h4(Color _color) {
       decoration: TextDecoration.none);
 }
 
+TextStyle h5(Color _color) {
+  return TextStyle(
+      color: _color,
+      fontSize: 17,
+      fontWeight: FontWeight.w400,
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none);
+}
+
 TextStyle h6(Color _color) {
   return TextStyle(
       color: _color,

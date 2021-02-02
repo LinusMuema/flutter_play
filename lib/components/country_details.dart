@@ -16,9 +16,13 @@ class _CountryDetailsState extends State<CountryDetails> {
   Widget build(BuildContext context) {
     return Container(
       width: deviceWidth(context),
-      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+      margin: EdgeInsets.only(left: 25, top: 10),
       child: Column(
-        children: [Text(widget._country.description, style: h6(Colors.white))],
+        children: [
+          Container(
+              padding: EdgeInsets.only(right: 30),
+              child: Text(widget._country.description, style: h5(Colors.white)))
+        ],
       ),
     );
   }
