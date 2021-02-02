@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_play/components/colors.dart';
 import 'package:flutter_play/components/texts.dart';
 import 'package:flutter_play/data/countries.dart';
 import 'package:flutter_play/utils/commons.dart';
@@ -20,8 +21,21 @@ class _CountryDetailsState extends State<CountryDetails> {
       child: Column(
         children: [
           Container(
-              padding: EdgeInsets.only(right: 30),
-              child: Text(widget._country.description, style: h5(Colors.white)))
+            padding: EdgeInsets.only(right: 30, bottom: 20),
+            child: Text(widget._country.description, style: h5(Colors.white)),
+          ),
+          Row(
+            children: [
+              Flexible(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Divider(height: 1, color: grey300),
+                    ],
+                  )),
+              Flexible(flex: 1, child: Container())
+            ],
+          )
         ],
       ),
     );

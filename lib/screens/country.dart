@@ -56,7 +56,7 @@ class _CountryInfoState extends State<CountryInfo> {
                             },
                             child: AnimatedOpacity(
                               opacity: _opacity,
-                              duration: Duration(milliseconds: 300),
+                              duration: Duration(milliseconds: 500),
                               child: _detailsState ? details : Container(),
                             ),
                           ),
