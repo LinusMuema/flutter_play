@@ -5,9 +5,9 @@ class User {
   User({this.name, this.image});
 }
 
-final janet = User(name: "Janet", image: "https://bit.ly/3oyOMlq");
-final maria = User(name: "Maria", image: "https://bit.ly/3oDTChd");
-final anna = User(name: "Anna", image: "https://bit.ly/39JhNa1");
+final janet = User(name: "Janet", image: "assets/images/janet.png");
+final anna = User(name: "Anna", image: "assets/images/anna.png");
+final maria = User(name: "Maria", image: "assets/images/maria.png");
 final user1 = User(name: "", image: "");
 final user2 = User(name: "", image: "");
 final user3 = User(name: "", image: "");

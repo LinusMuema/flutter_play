@@ -24,6 +24,13 @@ BoxDecoration verticalGradientRounded() {
   );
 }
 
+BoxDecoration darkBackground() {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(10),
+    color: Color.fromRGBO(0, 0, 0, 0.4),
+  );
+}
+
 double deviceWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }
