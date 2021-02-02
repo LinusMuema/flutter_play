@@ -66,3 +66,22 @@ final tePuia = Destination(
   image: 'assets/images/te_puia.png',
   country: 'New Zealand',
 );
+
+// Deutschland
+final neuschwanstein = Destination(
+  name: "Neushwanstein",
+  image: 'assets/images/neushwanstein.png',
+  country: 'Germany',
+);
+
+final kehlsteinhaus = Destination(
+  name: "Kehlsteinhaus",
+  image: 'assets/images/kehlsteinhaus.png',
+  country: 'Germany',
+);
+
+final dresden = Destination(
+  name: "Dresden",
+  image: 'assets/images/dresden.png',
+  country: 'Germany',
+);
