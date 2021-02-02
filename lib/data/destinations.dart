@@ -47,3 +47,22 @@ final museoDelPrado = Destination(
   image: 'assets/images/museo_del_prado.png',
   country: 'Spain',
 );
+
+// New Zealand
+final arthursPass = Destination(
+  name: "Arthur's pass",
+  image: 'assets/images/arthurs_pass.png',
+  country: 'New Zealand',
+);
+
+final lakeWakatipu = Destination(
+  name: "Lake Wakatipu",
+  image: 'assets/images/lake_wakatipu.png',
+  country: 'New Zealand',
+);
+
+final tePuia = Destination(
+  name: "Te Puia",
+  image: 'assets/images/te_puia.png',
+  country: 'New Zealand',
+);
