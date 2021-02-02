@@ -13,6 +13,7 @@ dependencies:
   carousel_slider: ^2.3.1
   flutter_svg: ^0.18.0
   measurer: ^1.0.0
+  swipedetector: ^1.2.0
 
 dev_dependencies:
   flutter_test:
